@@ -1,3 +1,22 @@
+/*請設計一個程式，完成以下工作：
+
+1. 讀取完成文件檔案內容
+2. 將文件中所有字元都改成小寫
+3. 統計一下文件中a~z字元出現多少次(大小寫視為相同字元)
+4. 統計一下文件中有多少個單字
+5. 分析一下文件中有多少個不同單字
+
+請在線上文字中回答 3,4,5的問題，並上傳完整程式碼。
+
+hint : 請善用string.h與ctype.h這兩個library
+strchr
+strstr
+strcpy
+strcmp
+strlwr
+strupr
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
