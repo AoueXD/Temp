@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	char sentance[1000];
+	char word[100][10];
+	int pos[100] = {-1};
+	int num = 1;
+	char* address;
+	int i;
+	char atoz[] = "cdefghijklmnopqrstuvwxyz";
+ 	//cdefghijklmnopqrstuvwxyz
+	
+	printf("please input a sentance : ");
+	
+	gets(sentance);
+	
+	address = sentance;
+	
+	do
+	{
+		address = strchr(address + 1, ' ');
+		if (address > 0)
+		{
+			pos[num] = address - sentance;		
+			printf("%d\n", pos[num]);
+			num++;
+		}
+	}while(address != NULL);
+	
+	
+	printf("%s", strlwr(sentance)); // 轉小寫
+	 
+	/*for(int i = 0; i < 1; i++) {
+		strchr(sentance, atoz[i]);
+		printf("%d", sentance);
+		
+	}*/
+	
+	char* temp[100];
+	int poss = 0, count = 1;
+	for (i = 0; i < num - 1; i++)
+	{
+		//printf("%d\t",pos[i]);
+		strncpy(word[i], sentance + pos[i] + 1, pos[i + 1] - pos[i]);
+		printf("%s\n", word[i]);
+		
+		
+		//沒有的話鍊上去 
+		for(int c = 0; c < num; c++) {
+			if(temp[c] == word[i]) {
+				temp[i] = word[i];
+				poss++;
+			} 
+		}
+		
+		
+		count++;
+	}
+	
+	printf("\n%d個字\n", count);
+	printf("\n共有%d個字\n", poss);
+	strncpy(word[i], sentance + pos[i] + 1, strlen(sentance) - pos[i]);
+	printf("%s\n", word[i]);
+	
+	
+	return 0;
+}
