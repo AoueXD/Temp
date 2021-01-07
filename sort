@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+	
+	
+	int id[100], weight[100], height[100];
+	int num = 0;
+	char temp[100];
+	
+	while(scanf("%d %d %d", &id[num], &weight[num], &height[num]) != EOF){
+		num++;
+	}
+	
+	
+	printf("original data:\n");
+	
+	
+	for(int i = 0; i < num; i++) 
+		printf("%d\t%d\t%d\n", id[i], weight[i], height[i]);
+		
+	sort(id, id + 100);
+	sort(weight, weight + 100);
+	sort(height, height + 100);
+
+	return 0;
+}
